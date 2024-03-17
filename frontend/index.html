@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>SkyWings</title>
 
     <!-- styles link-->
     <link rel="stylesheet" href="./styles/pages/login-register.css" />
@@ -16,45 +16,74 @@
 
   <body>
     <main>
-      <form href="#" id="login-form" class="grid-container">
+      <form href="#" id="login-form" class="grid-container active">
         <div class="image-container">
           <img
-            src="https://images.unsplash.com/photo-1579360826591-2c98525b8dbb?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            alt="flight"
+            src="https://images.unsplash.com/photo-1558285549-2a06f9a5fe65?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
           />
         </div>
 
-        <div id="login-content" class="login-content active flex column a-start j-s__around">
-          <h2>Welcome to SkyWings</h2>
+        <div id="login-content" class="login-content active flex column a-start j-centers">
+          <h2>
+            Take Flight: Log In to Soar <br />
+            <span> SkyWings</span>
+          </h2>
 
-          <div>
+          <div class="flex column">
             <label for="user-email">Email: </label>
             <input id="user-email" type="email" placeholder="user@gmail.com" required />
           </div>
 
-          <div>
+          <div class="flex column">
             <label for="user-password">Password</label>
             <input id="user-password" type="password" placeholder="user123" required />
             <span>forgot password</span>
           </div>
 
           <button type="submit">Login</button>
-          <p class="swtich-to-register">Don't have account? <span>Sign up</span></p>
+          <div class="swtich-to-register flex a-center j-center">
+            <p>Don't have account?</p>
+            <span>Sign up</span>
+          </div>
         </div>
 
-        <!-- <div id="register-content" class="register-content hidden">
-          <h2>Welcome to SkyWings</h2>
+      <!-- <form href="#" id="login-form" class="grid-container active">
+        <div class="image-container">
+          <img
+            src="https://images.unsplash.com/photo-1558285549-2a06f9a5fe65?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          />
+        </div>
 
-          <label for="user-email">Email: </label>
-          <input id="user-email" type="email" placeholder="user@gmail.com" required />
+        <div id="login-content" class="login-content active flex column a-start j-centers">
+          <h2>
+            Ready for Takeoff<br />
+            <span> SkyWings</span>
+          </h2>
 
-          <div>
-            <label>Password</label>
-            <input id="user-email" type="password" placeholder="user123" required />
+          <div class="flex column">
+            <label for="user-name">Name: </label>
+            <input id="user-name" type="text" placeholder="user@gmail.com" required />
+          </div>
+
+          <div class="flex column">
+            <label for="user-email">Email: </label>
+            <input id="user-email" type="email" placeholder="user@gmail.com" required />
+          </div>
+
+          <div class="flex column">
+            <label for="user-password">Password</label>
+            <input id="user-password" type="password" placeholder="user123" required />
             <span>forgot password</span>
           </div>
-        </div> -->
-      </form>
+
+          <button type="submit">Login</button>
+          <div class="swtich-to-register flex a-center j-center">
+            <p>Already have an?</p>
+            <span>Sign up</span>
+          </div>
+        </div>
+      </form> -->
     </main>
+    <div class="overlay"></div>
   </body>
 </html>
