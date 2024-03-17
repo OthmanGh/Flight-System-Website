@@ -43,6 +43,17 @@ html {
   font-size: 62.5%;
 }
 
+:root {
+  --crls-white-: #f9f7f7;
+  --crls-blue-light-: #3f72af;
+  --crls-blue-dark-: #112d4e;
+  --clrs-clear-blue-: #dbe2ef;
+}
+
 body {
   font-size: 1.6rem;
+}
+
+.hidden {
+  display: none;
 }

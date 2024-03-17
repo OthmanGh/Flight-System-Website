@@ -1,0 +1,21 @@
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: var(--crls-blue-dark-);
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background-color: white;
+  max-width: 70%;
+  margin: 0 auto;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.login-content {
+  padding-left: 5rem;
+}
