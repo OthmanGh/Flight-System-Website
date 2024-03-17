@@ -57,3 +57,20 @@
 
 - View and moderate user reviews and ratings.
 - Chat back with users for any support.
+
+
+
+
+
+
+git branch: Lists all local branches in the repository.
+
+git branch [branch_name]: Creates a new branch with the specified name.
+
+git branch -d [branch_name]: Deletes the specified branch. This command will fail if the branch has unmerged changes.
+
+git branch -D [branch_name]: Forces deletion of the specified branch, even if it has unmerged changes.
+
+git branch -m [old_branch_name] [new_branch_name]: Renames the specified branch.
+
+git checkout [branch_name]: Switches to the specified branch.
