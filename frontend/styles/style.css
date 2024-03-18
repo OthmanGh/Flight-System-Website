@@ -68,6 +68,16 @@ body {
   scroll-behavior: smooth;
 }
 
+body::-webkit-scrollbar {
+  display: none;
+}
+
+.hidden {
+  opacity: 0;
+  pointer-events: none;
+  display: none;
+}
+
 /* 
 Media Queries BreakPoints : 
   - 320px — 480px: Mobile devices

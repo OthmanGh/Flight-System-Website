@@ -1,9 +1,11 @@
-const userLogin = async () => {
+const userLogin = async (e) => {
+  e.preventDefault();
+
   const url = 'http://localhost/Flight-System-Website/backend/login-register/login.php';
   const formatData = new FormData();
 
-  formatData.append('email', userEmail.value);
-  formatData.append('password', userPassword.value);
+  formatData.append('email', userEmailLogin.value);
+  formatData.append('password', userPasswordLogin.value);
 
   const options = {
     method: 'POST',
@@ -27,13 +29,15 @@ const userLogin = async () => {
   }
 };
 
-const userRegister = async () => {
+const userRegister = async (e) => {
+  e.preventDefault();
+
   const url = 'http://localhost/Flight-System-Website/backend/login-register/login.php';
   const formatData = new FormData();
 
-  formatData.append('username', userName.value);
-  formatData.append('email', userEmail.value);
-  formatData.append('password', userPassword.value);
+  formatData.append('username', userNameRegister.value);
+  formatData.append('email', userEmailRegister.value);
+  formatData.append('password', userPasswordRegister.value);
 
   const options = {
     method: 'POST',
@@ -55,12 +59,15 @@ const userRegister = async () => {
   }
 };
 
-loginForm.addEventListener('submit', (e) => {
-  e.preventDefault();
+loginForm?.addEventListener('submit', userLogin);
+registerForm?.addEventListener('submit', userRegister);
 
-  console.log(userEmail.value);
-  console.log(userPassword.value);
+switchToLogin?.addEventListener('click', () => {
+  loginForm.classList.remove('hidden');
+  registerForm.classList.add('hidden');
+});
 
-  //userLogin();
-  userRegister();
+switchToRegister?.addEventListener('click', () => {
+  registerForm.classList.remove('hidden');
+  loginForm.classList.add('hidden');
 });
