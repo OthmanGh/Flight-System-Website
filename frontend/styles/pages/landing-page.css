@@ -77,7 +77,7 @@ body, html {
 
   .bgimg-1 {
     background-image: url("../../assets/wing.jpg");
-    height: 80%;
+    height: 70%;
   }
   .bgimg-2 {
     background-image: url("../../assets/airplane.avif");
@@ -88,7 +88,7 @@ body, html {
     padding-top: 20rem;
     margin-bottom: auto;
     margin:auto;
-    max-width: 80rem;
+    max-width: 110rem;
     color: white;
     
 }
@@ -98,8 +98,8 @@ body, html {
 }
   .container{
     margin: 0 auto;
-    max-width: 80rem;
-    margin-top: -10rem;
+    max-width: 110rem;
+    margin-top: -15rem;
     z-index: 5;
   }
 
@@ -134,12 +134,31 @@ body, html {
     box-shadow: 0 0 15px #93939385;
   }
   
+  .details{
+    height: 6rem;
+    width:17rem ;
+    
+
+  }
+
+.btn{
+    background-color: #112D4E;
+    color: white;
+    border-radius: 0.5rem;
+    width: 17rem;
+}
+
   .active-tab-button {
     background-color: #ffffff;
     transform-origin: bottom;
     color:#133863;
     
   } 
+  .radio{
+    padding:2rem;
+  }
+
+
   input{
     background-color: #efeeee;
     border: 0;

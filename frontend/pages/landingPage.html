@@ -29,23 +29,25 @@
     </div>
     <div class="container">
       <div class="tab-buttons">
-      <button class="tab-button active-tab-button flex row" onclick="toggleTab(0)"><img class="icon flex row" src="../assets/flight.svg">Flights</button>
+      <button class="tab-button active-tab-button flex row" onclick="toggleTab(0)"><img class="icon flex row" src="../assets/flight.svg">Flights      .</button>
       <button class="tab-button flex row" onclick="toggleTab(1)"><img class="icon flex row" src="../assets/suitcase.svg">Display Available</button>
       <button class="tab-button flex row" onclick="toggleTab(2)">Details</button>
     </div>
   <div class="tab" id="tab1">
-    <div class="flex row">
+    <div class="flex row radio">
       <input type="radio" id="round">
       <label for="round">Round</label><br>
       <input type="radio" id="oneWay">
       <label for="oneWay">One Way</label><br>
     </div>
       <div >
-        <form class="flex row j-s__between">
-          <input type="text" id="departure" placeholder="From">
-          <input type="text" id="arrival" placeholder="To">
-          <input type="date" id="date" placeholder="Date">
-          <input type="number" id="person" placeholder="Passengers">
+        <form id="searchFlight-form" class="flex row j-s__between">
+          <input class="details" type="text" id="departure-airport" placeholder="From">
+          <input class="details" type="text" id="arrival-airport" placeholder="To">
+          <input class="details" type="date" id="departure-date" placeholder="Departure Date">
+          <input class="details" type="date" id="arrival-date" placeholder="Arrival Date">
+          <input class="details" type="number" id="person" placeholder="Passengers">
+          <button class="btn" type="submit">Search Flights</button>
         </form>
       </div>
   </div>

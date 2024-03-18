@@ -1,3 +1,51 @@
+const from=document.getElementById('searchFlight-form');
+const departureAirport=document.getElementById('departure-airport');
+const arrivalAirport=document.getElementById('arrival-airport');
+const departureDate=document.getElementById('departure-date');
+const arrivalDate=document.getElementById('arrival-date');
+const passengers=document.getElementById('passengers');
+
+
+const clearSearchInputs = () => {
+    departure.value = '';
+    arrival.value = '';
+    date.value = '';
+    passengers.value = '';
+  };
+
+const searchFlight = async (e) => {
+  e.preventDefault();
+
+  const url = 'http://localhost/Flight-System-Website/backend/searchFlight.php';
+  const formatData = new FormData();
+
+  formatData.append('departure_airport', departureAirport.value);
+  formatData.append('arrival_airport', arrivalAirport.value);
+  formatData.append('departure_date', departureDate.value);
+  formatData.append('arrival_date', arrivalDate.value);
+
+  const options = {
+    method: 'POST',
+    body: formatData,
+  };
+
+  try {
+    const res = await fetch(url, options);
+    const data = await res.json();
+
+    console.log(data);
+
+    if (data['status'] === 'success') {
+      clearSearchInputs();
+      
+      
+    } else {
+      error.textContent = `${data['message']} 😂`;
+    }
+  } catch (error) {
+    console.error(error);
+  }
+};
 
 
 function toggleTab(tabIndex) {
