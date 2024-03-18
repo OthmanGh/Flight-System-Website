@@ -11,75 +11,77 @@
     <link rel="stylesheet" href="./styles/style.css" />
 
     <!--Scripts -->
+    <script defer src="./scripts/var-declarations.js"></script>
     <script defer src="./scripts/app/login-register.js"></script>
   </head>
 
   <body>
     <main>
-      <!-- <form href="#" id="login-form" class="grid-container active">
+      <form href="#" id="login-form" class="grid-container form active">
         <div class="image-container">
           <img
             src="https://images.unsplash.com/photo-1558285549-2a06f9a5fe65?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
           />
         </div>
 
-        <div id="login-content" class="login-content active flex column a-start j-centers">
+        <div id="login-content" class="content active">
           <h2>
-            Take Flight: Log In to Soar <br />
+            Take Flight: Log In to Soar
             <span> SkyWings</span>
           </h2>
 
           <div class="flex column">
-            <label for="user-email">Email: </label>
-            <input id="user-email" type="email" placeholder="user@gmail.com" required />
+            <label for="user-email-login">Email: </label>
+            <input id="user-email-login" type="email" placeholder="user@gmail.com" required />
           </div>
 
           <div class="flex column">
-            <label for="user-password">Password</label>
-            <input id="user-password" type="password" placeholder="user123" required />
+            <label for="user-password-login">Password</label>
+            <input id="user-password-login" type="password" placeholder="user123" required />
             <span>forgot password</span>
           </div>
 
-          <button type="submit">Login</button>
-          <div class="swtich-to-register flex a-center j-center">
+          <button type="submit" class="button login-button">Login</button>
+          <div class="swtich-to-register flex a-center j-start">
             <p>Don't have account?</p>
-            <span>Sign up</span>
+            <span class="swtich-to-register">Sign up</span>
           </div>
-        </div> -->
+        </div>
+      </form>
 
-      <form href="#" id="login-form" class="grid-container">
+      <form href="#" id="register-form" class="grid-container form hidden">
         <div class="image-container">
           <img
             src="https://images.unsplash.com/photo-1558285549-2a06f9a5fe65?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
           />
         </div>
 
-        <div id="login-content" class="login-content active flex column a-start j-centers">
+        <div id="register-content" class="content active">
           <h2>
             Ready for Takeoff<br />
             <span> SkyWings</span>
           </h2>
 
           <div class="flex column">
-            <label for="user-name">Name: </label>
-            <input id="user-name" type="text" placeholder="user@gmail.com" required />
+            <label for="user-name-register">Name: </label>
+            <input id="user-name-register" type="text" placeholder="user@gmail.com" required />
           </div>
 
           <div class="flex column">
-            <label for="user-email">Email: </label>
-            <input id="user-email" type="email" placeholder="user@gmail.com" required />
+            <label for="user-email-register">Email: </label>
+            <input id="user-email-register" type="email" placeholder="user@gmail.com" required />
           </div>
 
           <div class="flex column">
-            <label for="user-password">Password</label>
-            <input id="user-password" type="password" placeholder="user123" required />
+            <label for="user-password-register">Password</label>
+            <input id="user-password-register" type="password" placeholder="user123" required />
             <span>forgot password</span>
           </div>
 
-          <button type="submit">Login</button>
-          <div class="swtich-to-register flex a-center j-center">
+          <button class="btn register-button" type="submit" id="register-button">Login</button>
+          <div class="swtich-to-register flex a-center j-start">
             <p>Already have an?</p>
-            <span>Sign up</span>
+            <span id="swtich-to-login">Login</span>
           </div>
         </div>
       </form>
