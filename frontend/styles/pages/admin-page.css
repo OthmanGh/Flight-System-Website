@@ -1,0 +1,65 @@
+:root {
+  --body-bg: #1232;
+  --nav-bg: rgb(69, 92, 115);
+}
+
+body {
+  font-size: 2rem;
+  background-color: var(--body-bg);
+  color: white;
+  display: grid;
+  grid-template-columns: 22rem 1fr;
+  gap: 6rem;
+  min-height: 100vh;
+}
+
+nav {
+  background-color: var(--nav-bg);
+  height: 100%;
+  position: sticky;
+  max-height: 100vh; /*svh mobile*/
+}
+
+.nav-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  display: grid;
+  gap: 2rem;
+  padding-block: 2rem;
+}
+
+.nav-list li {
+  padding: 1rem 2rem;
+  margin-left: 2rem;
+  border-radius: 100vw 0 0 100vw;
+}
+
+.nav-list li.active {
+  background: var(--body-bg);
+  position: relative;
+}
+
+.nav-list li.active::before,
+.nav-list li.active::after {
+  content: '';
+  position: absolute;
+  width: 1rem;
+  height: 1rem;
+  background: red;
+  border-radius: 100vw;
+}
+
+.nav-list li.active::before {
+  top: 0;
+}
+
+.nav-list li.active::after {
+  bottom: 0;
+}
+
+.nav-list a {
+  color: white;
+  text-decoration: none;
+}

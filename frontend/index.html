@@ -31,13 +31,13 @@
           </h2>
 
           <div class="flex column">
-            <label for="user-email-login">Email: </label>
+            <label for="user-email-login">Email <span class="red-start">*</span> </label>
             <input id="user-email-login" type="email" placeholder="user@gmail.com" required />
           </div>
 
           <div class="flex column">
-            <label for="user-password-login">Password</label>
-            <input id="user-password-login" type="password" placeholder="user123" required />
+            <label for="user-password-login">Password <span class="red-start">*</span></label>
+            <input id="user-password-login" type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" placeholder="user123" required />
             <span>forgot password</span>
           </div>
 
@@ -63,18 +63,18 @@
           </h2>
 
           <div class="flex column">
-            <label for="user-name-register">User Name: </label>
+            <label for="user-name-register">User Name <span class="red-start">*</span> </label>
             <input id="user-name-register" type="text" placeholder="Name" required />
           </div>
 
           <div class="flex column">
-            <label for="user-email-register">Email: </label>
+            <label for="user-email-register">Email <span class="red-start">*</span></label>
             <input id="user-email-register" type="email" placeholder="user@gmail.com" required />
           </div>
 
           <div class="flex column">
-            <label for="user-password-register">Password</label>
-            <input id="user-password-register" type="password" placeholder="user123" required />
+            <label for="user-password-register">Password <span class="red-start">*</span></label>
+            <input id="user-password-register" type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" placeholder="user123" required />
             <span>forgot password</span>
           </div>
 

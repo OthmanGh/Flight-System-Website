@@ -31,6 +31,7 @@ const userLogin = async (e) => {
 
     if (data['status'] === 'success') {
       clearLoginInputs();
+
       localStorage.setItem('id', data['id']);
       window.location.href = 'http://127.0.0.1:5500/frontend/pages/landingPage.html';
     } else {
@@ -59,6 +60,8 @@ const userRegister = async (e) => {
   try {
     const res = await fetch(url, options);
     const data = await res.json();
+
+    console.log(data);
 
     if (data['status'] === 'success') {
       clearRegisterInputs();
