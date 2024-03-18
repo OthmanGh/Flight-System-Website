@@ -10,3 +10,5 @@ const userPasswordLogin = document.getElementById('user-password-login');
 
 const switchToLogin = document.getElementById('switch-to-login');
 const switchToRegister = document.getElementById('switch-to-register');
+
+const errorMessage = document.getElementById('error');

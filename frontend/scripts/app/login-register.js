@@ -1,3 +1,14 @@
+const clearLoginInputs = () => {
+  userEmailLogin.value = '';
+  userPasswordLogin.value = '';
+};
+
+const clearRegisterInputs = () => {
+  userNameRegister.value = '';
+  userEmailRegister.value = '';
+  userPasswordRegister.value = '';
+};
+
 const userLogin = async (e) => {
   e.preventDefault();
 
@@ -19,10 +30,11 @@ const userLogin = async (e) => {
     console.log(data);
 
     if (data['status'] === 'success') {
+      clearLoginInputs();
       localStorage.setItem('id', data['id']);
       window.location.href = 'http://127.0.0.1:5500/frontend/pages/landingPage.html';
     } else {
-      console.log('incoorect credentials');
+      error.textContent = `${data['message']} 😂`;
     }
   } catch (error) {
     console.error(error);
@@ -32,7 +44,7 @@ const userLogin = async (e) => {
 const userRegister = async (e) => {
   e.preventDefault();
 
-  const url = 'http://localhost/Flight-System-Website/backend/login-register/login.php';
+  const url = 'http://localhost/Flight-System-Website/backend/login-register/register.php';
   const formatData = new FormData();
 
   formatData.append('username', userNameRegister.value);
@@ -49,10 +61,10 @@ const userRegister = async (e) => {
     const data = await res.json();
 
     if (data['status'] === 'success') {
+      clearRegisterInputs();
       localStorage.setItem('id', data['id']);
       window.location.href = 'http://127.0.0.1:5500/frontend/pages/landingPage.html';
     } else {
-      console.log('incoorect credentials');
     }
   } catch (error) {
     console.error(error);

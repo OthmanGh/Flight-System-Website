@@ -45,6 +45,13 @@ main {
   gap: 20px;
 }
 
+#login-content.showErrorMessage::after {
+  content: 'Incorrect Credentials 😂 !!!';
+  font-weight: bold;
+  color: rgb(176, 38, 38);
+  font-size: 1.6rem;
+}
+
 .content h2 {
   font-size: 3.8rem;
   text-transform: uppercase;
@@ -136,6 +143,15 @@ button:hover {
   right: 0;
   bottom: 0;
   z-index: -1;
+}
+
+.error {
+  border: 1.5px solid rgb(228, 22, 22);
+}
+
+.error-message {
+  color: rgb(228, 22, 22);
+  font-weight: bold;
 }
 
 @media (max-width: 1024px) {
