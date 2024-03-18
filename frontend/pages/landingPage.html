@@ -7,8 +7,88 @@
     <link rel="stylesheet" href="../styles/common/utilities.css">
     <link rel="stylesheet" href="../styles/style.css">
     <link rel="stylesheet" href="../styles/pages/landing-page.css">
+
   </head>
   <body>
-    <h1>Landing page</h1>
-  </body>
+    <nav>
+      <input type="checkbox" id="check">
+      <label for="check" class="checkbtn">
+        <i class="fas fa-bars"></i>
+      </label>
+      <label class="logo">SkyWings</label>
+      <ul>
+        <li><a class="active" href="#">Home</a></li>
+        <li><a href="#">Booking</a></li>
+        <li><a href="#">Discover</a></li>
+        <li><a href="#">Coins</a></li>
+        <li><a href="#">SIGN IN</a></li>
+      </ul>
+    </nav>
+    <div class="bgimg-1">
+    <h1 class="slogan">HELLO<br>Where do you want to explore?</h1>
+    </div>
+    <div class="container">
+      <div class="tab-buttons">
+      <button class="tab-button active-tab-button flex row" onclick="toggleTab(0)"><img class="icon flex row" src="../assets/flight.svg">Flights</button>
+      <button class="tab-button flex row" onclick="toggleTab(1)"><img class="icon flex row" src="../assets/suitcase.svg">Display Available</button>
+      <button class="tab-button flex row" onclick="toggleTab(2)">Details</button>
+    </div>
+  <div class="tab" id="tab1">
+    <div class="flex row">
+      <input type="radio" id="round">
+      <label for="round">Round</label><br>
+      <input type="radio" id="oneWay">
+      <label for="oneWay">One Way</label><br>
+    </div>
+      <div >
+        <form class="flex row j-s__between">
+          <input type="text" id="departure" placeholder="From">
+          <input type="text" id="arrival" placeholder="To">
+          <input type="date" id="date" placeholder="Date">
+          <input type="number" id="person" placeholder="Passengers">
+        </form>
+      </div>
+  </div>
+  <div class="tab" id="tab2">
+      
+  </div>
+  <div class="tab" id="tab3">
+      <h2>Tab 3 Content</h2>
+      <p>Description for Tab 3 goes here.</p>
+  </div>
+    </div>
+    <div class="flex row">
+      <div class="flex column">
+        <div>
+
+        </div>
+        <div>
+
+        </div>
+      </div>
+      <div class="flex column">
+        <div>
+
+        </div>
+        <div>
+
+        </div>
+      </div>
+      <div class="flex column">
+        <div>
+
+        </div>
+        <div>
+
+        </div>
+      </div>
+    </div>
+    <div class="bgimg-2">
+
+    </div>
+    <script src="../scripts/app/landing-page.js"></script>
+    </body>
+    <footer class="footer">
+      OYS © All right sreserved
+    </footer>
 </html>
