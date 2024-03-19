@@ -1,3 +1,5 @@
+const path = `http://localhost/Flight-System-Website/server/login-register`;
+
 const clearLoginInputs = () => {
   userEmailLogin.value = '';
   userPasswordLogin.value = '';
@@ -12,8 +14,8 @@ const clearRegisterInputs = () => {
 const userLogin = async (e) => {
   e.preventDefault();
 
-  const url = 'http://localhost/Flight-System-Website/backend/login-register/login.php';
-  const formatData = new FormData();
+  const url = `${path}/login.php`;
+  const formatData = new URLSearchParams();
 
   formatData.append('email', userEmailLogin.value);
   formatData.append('password', userPasswordLogin.value);
@@ -33,9 +35,9 @@ const userLogin = async (e) => {
       clearLoginInputs();
 
       localStorage.setItem('id', data['id']);
-      window.location.href = 'http://127.0.0.1:5500/frontend/pages/landingPage.html';
+      window.location.href = 'http://127.0.0.1:5500/client/pages/landingPage.html';
     } else {
-      error.textContent = `${data['message']} 😂`;
+      errorMessage.textContent = `${data['message']} 😂`;
     }
   } catch (error) {
     console.error(error);
@@ -45,8 +47,8 @@ const userLogin = async (e) => {
 const userRegister = async (e) => {
   e.preventDefault();
 
-  const url = 'http://localhost/Flight-System-Website/backend/login-register/register.php';
-  const formatData = new FormData();
+  const url = `${path}/register.php`;
+  const formatData = new URLSearchParams();
 
   formatData.append('username', userNameRegister.value);
   formatData.append('email', userEmailRegister.value);
@@ -66,8 +68,9 @@ const userRegister = async (e) => {
     if (data['status'] === 'success') {
       clearRegisterInputs();
       localStorage.setItem('id', data['id']);
-      window.location.href = 'http://127.0.0.1:5500/frontend/pages/landingPage.html';
+      window.location.href = 'http://127.0.0.1:5500/client/pages/landingPage.html';
     } else {
+      // Handle error if needed
     }
   } catch (error) {
     console.error(error);
