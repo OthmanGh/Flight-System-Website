@@ -1,4 +1,5 @@
 <?php
+
 $mysqli = new mysqli('localhost', 'root', "", "flightSystemWebsite");
 
 if ($mysqli->connect_error) {

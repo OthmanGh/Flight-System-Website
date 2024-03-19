@@ -4,15 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SkyWings</title>
-    <link rel="stylesheet" href="../styles/common/utilities.css">
-    <link rel="stylesheet" href="../styles/style.css">
-    <link rel="stylesheet" href="../styles/pages/landing-page.css">
-
+    <link rel="stylesheet" href="../styles/common/utilities.css" />
+    <link rel="stylesheet" href="../styles/style.css" />
+    <link rel="stylesheet" href="../styles/pages/landing-page.css" />
   </head>
   <body>
-
     <nav>
-      <input type="checkbox" id="check">
+      <input type="checkbox" id="check" />
       <label for="check" class="checkbtn">
         <i class="fas fa-bars"></i>
       </label>
@@ -25,98 +23,62 @@
         <li><a href="#">Coins</a></li>
         <li><a href="../pages/adminPage.html">SIGN IN</a></li>
       </ul>
-
     </nav>
 
     <div class="bgimg-1">
-      <h1 class="slogan">HELLO<br>Where do you want to explore?</h1>
+      <h1 class="slogan">HELLO<br />Where do you want to explore?</h1>
     </div>
 
     <div class="container">
-
       <div class="tab-buttons">
+        <button class="tab-button active-tab-button flex row" onclick="toggleTab(0)"><img class="icon flex row" src="../assets/flight.svg" />Flights .</button>
 
-      <button class="tab-button active-tab-button flex row" onclick="toggleTab(0)">
-        <img class="icon flex row" src="../assets/flight.svg">Flights      .
-      </button>
+        <button class="tab-button flex row" onclick="toggleTab(1)"><img class="icon flex row" src="../assets/suitcase.svg" />Display Available</button>
 
-      <button class="tab-button flex row" onclick="toggleTab(1)">
-        <img class="icon flex row" src="../assets/suitcase.svg">Display Available
-      </button>
-
-      <button class="tab-button flex row" onclick="toggleTab(2)">
-        Details
-      </button>
-
-    </div>
-
-  <div class="tab" id="tab1">
-
-      <div >
-        <form id="searchFlight-form" class="containerOptions j-s__between ">
-          <input class="details" type="text" id="departure-airport" placeholder="From">
-          <input class="details" type="text" id="arrival-airport" placeholder="To">
-          <input class="details" type="datetime" id="departure-date" placeholder="Departure Date">
-          <input class="details" type="date" id="arrival-date" placeholder="Arrival Date">
-          <input class="details" type="number" id="person" placeholder="Passengers">
-          <button class="details btn" type="submit">Search Flights</button>
-        </form>
+        <button class="tab-button flex row" onclick="toggleTab(2)">Details</button>
       </div>
 
-  </div>
+      <div class="tab" id="tab1">
+        <div>
+          <form id="searchFlight-form" class="containerOptions j-s__between">
+            <input class="details" type="text" id="departure-airport" placeholder="From" />
+            <input class="details" type="text" id="arrival-airport" placeholder="To" />
+            <input class="details" type="datetime" id="departure-date" placeholder="Departure Date" />
+            <input class="details" type="date" id="arrival-date" placeholder="Arrival Date" />
+            <input class="details" type="number" id="person" placeholder="Passengers" />
+            <button class="details btn" type="submit">Search Flights</button>
+          </form>
+        </div>
+      </div>
 
-  <div class="tab" id="tab2">
-      
-  </div>
-  <div class="tab" id="tab3">
-      <h2>Tab 3 Content</h2>
-      <p>Description for Tab 3 goes here.</p>
-  </div>
-
+      <div class="tab" id="tab2"></div>
+      <div class="tab" id="tab3">
+        <h2>Tab 3 Content</h2>
+        <p>Description for Tab 3 goes here.</p>
+      </div>
     </div>
 
-    <div id="searchResult">
-      
-    </div>
+    <div id="searchResult"></div>
     <div class="flex row">
-
       <div class="flex column">
-        <div>
-
-        </div>
-        <div>
-
-        </div>
+        <div></div>
+        <div></div>
       </div>
 
       <div class="flex column">
-        <div>
-
-        </div>
-        <div>
-
-        </div>
+        <div></div>
+        <div></div>
       </div>
 
       <div class="flex column">
-        <div>
-
-        </div>
-        <div>
-
-        </div>
+        <div></div>
+        <div></div>
       </div>
-
     </div>
-    <div class="bgimg-2">
-
-    </div>
+    <div class="bgimg-2"></div>
 
     <script src="../scripts/app/landing-page.js"></script>
-    </body>
+  </body>
 
-    <footer class="footer">
-      OYS © All right sreserved
-    </footer>
-
+  <footer class="footer">OYS © All right sreserved</footer>
 </html>

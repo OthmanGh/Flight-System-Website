@@ -83,3 +83,93 @@ h3 {
   color: var(--clrs-blue-dark-);
   font-weight: bold;
 }
+
+/* Flights : */
+
+.flights {
+  display: flex;
+  flex-direction: column;
+  gap: 7rem;
+}
+
+.flights-header {
+  color: var(--clrs-white-);
+  background-color: var(--clrs-blue-dark-);
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.6);
+  padding: 2rem 3rem;
+  border-radius: 12px;
+}
+
+.flights-title {
+  font-size: 5rem;
+}
+
+.cancel-save-btns {
+  gap: 3rem;
+}
+
+.btn {
+  padding: 1.2rem 3rem;
+  color: var(--clrs-blue-dark-);
+  font-weight: bold;
+  border: 1px color;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 2.4rem;
+  border: 2px solid var(--clrs-blue-dark-);
+  transition: all 0.3s ease-in-out;
+}
+
+.cancel-btn {
+  background-color: transparent;
+  color: var(--clrs-white-);
+}
+
+.cancel-btn:hover {
+  border: 1px solid var(--clrs-white-);
+}
+
+.save-btn:hover {
+  border-radius: 1px solid var(--clrs-blue-dark-);
+  background-color: var(--clrs-blue-light-);
+  color: var(--clrs-white-);
+}
+
+/*Table */
+.flights-table {
+  width: 100%;
+  font-size: 2.5rem;
+  border-collapse: collapse;
+  border: none;
+  color: var(--clrs-blue-dark-);
+  background-color: var(--clrs-blue-dark-);
+}
+
+.flights-table th,
+.flights-table td {
+  border: none;
+  padding: 8px;
+  text-align: center;
+  background-color: var(--clrs-white-);
+}
+
+.flights-table td {
+  font-size: 2rem;
+  color: gray;
+}
+
+.flight-number {
+  width: 10%;
+}
+
+.airline,
+.departure-date,
+.arrival-date,
+.departure-airport,
+.arrival-airport {
+  width: 15%;
+}
+
+.flight-number {
+  color: var(--clrs-blue-light-) !important;
+}
