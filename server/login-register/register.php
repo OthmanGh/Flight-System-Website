@@ -5,7 +5,7 @@ header("Access-Control-Allow-Credentials: true");
 header("Access-Control-Allow-Methods: GET, POST, PUT, DELETE");
 header("Access-Control-Allow-Headers: Content-Type");
 
-include("connection.php");
+include("../connection.php");
 
 $username = $_POST['username'];
 $email = $_POST['email'];
@@ -21,7 +21,7 @@ if ($check_email->num_rows() == 1) {
     $response['message'] = 'User already exists';
 } else {
     $hashed_password = password_hash($password, PASSWORD_BCRYPT);
-    $role = 'regular';
+    $role = 'member';
     $query = $mysqli->prepare('INSERT INTO users(username, password, email, role) VALUES(?,?,?,?);');
     $query->bind_param('ssss', $username, $hashed_password, $email, $role);
     if ($query->execute()) {
