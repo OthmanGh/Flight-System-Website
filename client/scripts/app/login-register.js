@@ -15,7 +15,7 @@ const userLogin = async (e) => {
   e.preventDefault();
 
   const url = `${path}/login.php`;
-  const formatData = new URLSearchParams();
+  const formatData = new FormData();
 
   formatData.append('email', userEmailLogin.value);
   formatData.append('password', userPasswordLogin.value);
@@ -32,12 +32,10 @@ const userLogin = async (e) => {
     console.log(data);
 
     if (data['status'] === 'success') {
-      clearLoginInputs();
-
+      clearRegisterInputs();
       localStorage.setItem('id', data['id']);
       window.location.href = 'http://127.0.0.1:5500/client/pages/landingPage.html';
     } else {
-      errorMessage.textContent = `${data['message']} 😂`;
     }
   } catch (error) {
     console.error(error);
@@ -48,7 +46,7 @@ const userRegister = async (e) => {
   e.preventDefault();
 
   const url = `${path}/register.php`;
-  const formatData = new URLSearchParams();
+  const formatData = new FormData();
 
   formatData.append('username', userNameRegister.value);
   formatData.append('email', userEmailRegister.value);

@@ -1,5 +1,5 @@
 <?php
-include("connection.php");
+include("../connection.php");
 
 header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Credentials: true");
@@ -9,12 +9,12 @@ header("Access-Control-Allow-Headers: Content-Type");
 $email = $_POST['email'] ?? '';
 $password = $_POST['password'] ?? '';
 
-$query = $mysqli->prepare('SELECT id, username, email, password, role FROM users WHERE email=?');
+$query = $mysqli->prepare('SELECT user_id, username, email, password FROM users WHERE email=?');
 $query->bind_param('s', $email);
 $query->execute();
 $query->store_result();
 
-$query->bind_result($id, $username, $email, $hashed_password, $role);
+$query->bind_result($id, $username, $email, $hashed_password);
 $query->fetch();
 $num_rows = $query->num_rows();
 

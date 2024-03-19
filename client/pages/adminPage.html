@@ -8,6 +8,105 @@
     <link rel="stylesheet" href="../styles/common/utilities.css" />
     <link rel="stylesheet" href="../styles/style.css" />
     <link rel="stylesheet" href="../styles/pages/admin-page.css" />
+
+    <script defer src="../scripts/app/admin.js"></script>
   </head>
-  <body></body>
+
+  <body>
+    <div class="grid-container">
+      <aside class="sidebar">
+        <p id="nav" class="nav-active">Dashboards</p>
+        <p id="nav">Flights</p>
+        <p id="nav">Bookings</p>
+        <p id="nav">Feedback</p>
+      </aside>
+
+      <main class="content">
+        <div class="dashboards">
+          <div class="title flex">
+            <img class="icon" src="../assets/dashboard.svg" />
+            <h3>dashboards</h3>
+          </div>
+
+          <div class="status">
+            <div>
+              <img class="icon" src="../assets/booking-svgrepo-com.svg" />
+              <h3>total bookings</h3>
+              <p class="value">80</p>
+            </div>
+
+            <div>
+              <img class="icon" src="../assets/revenue-svgrepo-com.svg" />
+              <h3>Total Revenue</h3>
+              <p class="value">80</p>
+            </div>
+
+            <div>
+              <img class="icon" src="../assets/people-svgrepo-com.svg" />
+              <h3>Total Users</h3>
+              <p class="value">80</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="flights hidden flex column">
+          <div class="flights-header flex row a-center j-s__between">
+            <h2 class="flights-title">Flights</h2>
+            <div class="cancel-save-btns flex">
+              <button class="btn cancel-btn">Cancel</button>
+              <button class="btn save-btn">Save</button>
+            </div>
+          </div>
+
+          <table class="flights-table">
+            <tr class="table-titles">
+              <th>Number</th>
+              <th>Airline</th>
+              <th>Departure Date</th>
+              <th>Arrival Date</th>
+              <th>Departure Airport</th>
+              <th>Arrival Airport</th>
+              <th>Edit</th>
+              <th>Delete</th>
+            </tr>
+
+            <tr class="flights-info">
+              <td class="flight-number">427893</td>
+              <td>Middle East</td>
+              <td>2024/2/12</td>
+              <td>2024/2/12</td>
+              <td>FAX</td>
+              <td>JAV</td>
+              <td>Edit</td>
+              <td>Delete</td>
+            </tr>
+          </table>
+        </div>
+
+        <div class="bookings hidden">
+          <h1>Bookings</h1>
+        </div>
+
+        <div class="feedback hidden">
+          <h1>Feedback</h1>
+        </div>
+      </main>
+    </div>
+  </body>
 </html>
+
+<!-- 
+Admin Dashboard:
+- Provide an overview and analytics of the whole system, such as total bookings, revenue, number of users, etc.
+
+- Flight Management:
+- CRUD operations for managing flights, including adding new flights, updating schedules, assigning airplanes to flights, and canceling flights.
+
+- Booking and Financial Management:
+- View all bookings, including details such as flight information, passenger details, payment status, etc.
+- Ability to cancel or modify bookings as needed.
+- Ability to accept/reject coins request forms.
+
+- Feedback Management:
+- View and moderate user reviews and ratings.
+- Chat back with users for any support. -->
