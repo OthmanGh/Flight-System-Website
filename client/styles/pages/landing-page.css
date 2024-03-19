@@ -104,40 +104,112 @@ a:hover {
   z-index: 5;
 }
 
-.tab-buttons {
-  display: flex;
-}
+  .tab-buttons {
+    display: flex;
+    
+  }
+  
+  .tab-button {
+    background-color: #e4e3e3;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    height: 4rem;
+    border-top-left-radius:0.2rem;
+    border-top-right-radius:0.2rem;
+    margin-right: 0.5rem;
+    color:#3f72af;
+    text-align: center;
 
-.tab-button {
-  background-color: #e4e3e3;
-  border: none;
-  padding: 10px 20px;
-  cursor: pointer;
-  height: 4rem;
-  border-top-left-radius: 0.2rem;
-  border-top-right-radius: 0.2rem;
-  margin-right: 0.5rem;
-  color: #3f72af;
-  text-align: center;
-}
+  }
+  .grid__container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+    box-shadow: 0px 0px 80px rgba(255, 68, 0, 0.1);
+  }
+  
+  .grid {
+    height: 500px;
+    width: 100%;
+    text-align: start;
+  }
+  
+  .grid p {
+    line-height: 1.7;
+    margin-bottom: 40px;
+  }
+  
+  .grid__2,
+  .grid__4,
+  .grid__6 {
+    padding: 0px 30px;
+  }
+  
+  .grid__2 {
+    background-color: #366399;
+  }
+  
+  .grid__4 {
+    background-color: #112D4E;
+  }
+  
+  .grid__6 {
+    background-color: #dbe2ef;
+  }
+  
+  .grid__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: right;
+  }
+  
+  .grid h3 {
+    font-size: 2.8rem;
+    padding-top: 60px;
+    margin-bottom: 30px;
+  }
+  
+  .grid a:link,
+  .grid a:visited {
+    cursor: pointer;
+    background-color: transparent;
+    font-size: 2rem;
+    padding: 10px 20px;
+    border-radius: 3px;
+    font-weight: bold;
+    border: 2px solid gray;
+    transition: all 0.3s ease;
+  }
+  
+  .grid a:hover {
+    color: hsla(16, 81%, 46%, 0.8);
+    background-color: transparent;
+    border: 2px solid hsla(16, 81%, 46%, 0.8);
+  }
+  
+  .tab-button:hover {
+    background-color: #ddd;
+  }
+  
+  .tab {
+    display: none;
+    width: 100%;
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 0 15px #93939385;
+  }
+  
+  .details{
+    height: 6rem;
+    width:17rem ;
+    padding:0 2rem;
+    
 
-.tab-button:hover {
-  background-color: #ddd;
-}
-
-.tab {
-  display: none;
-  width: 100%;
-  padding: 20px;
-  background-color: #ffffff;
-  box-shadow: 0 0 15px #93939385;
-}
-
-.details {
-  height: 6rem;
-  width: 17rem;
-  padding: 0 2rem;
-}
+  }
 
 .btn {
   background-color: #112d4e;
@@ -146,56 +218,84 @@ a:hover {
   width: 17rem;
 }
 
-.active-tab-button {
-  background-color: #ffffff;
-  transform-origin: bottom;
-  color: #133863;
-}
-.radio {
-  padding: 2rem;
-}
+  .active-tab-button {
+    background-color: #ffffff;
+    transform-origin: bottom;
+    color:#133863;
+    
+  } 
 
-input {
-  background-color: #efeeee;
-  border: 0;
-  border-radius: 0.5rem;
-}
-.footer {
-  background-color: #112d4e;
-  color: white;
-  text-align: center;
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-}
-@media (max-width: 600px) {
-  label.logo {
-    font-size: 30px;
-    padding-left: 50px;
+  #search-cesult-container{
+    position: relative;
+    
   }
+
+  .search-result{
+
+    position: absolute;
+    top:0;
+    
+    border-bottom: #112D4E;
+  }
+
+
+  input{
+    background-color: #efeeee;
+    border: 0;
+    border-radius: 0.5rem;
+  } 
+
+  table {
+    margin: 7rem 0;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  th, td {
+    border-bottom: solid 0.1rem #112D4E;
+    text-align: left;
+    padding: 8px;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+
+  .footer{
+    background-color: #112D4E;
+    color: white;
+    text-align: center;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+  }
+  @media (max-width: 600px){
+    label.logo{
+      font-size: 30px;
+      padding-left: 50px;
+    }
 
   nav ul li a {
     font-size: 16px;
   }
 
-  .slogan {
-    padding-left: 2rem;
-    font-size: large;
-  }
+    .slogan{
+      padding-left: 2rem;
+      font-size: large;
+    }
+    
 
-  .containerOptions {
-    gap: 1rem;
-  }
+    .details{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-left: auto;
+      margin-right: auto;
+      
+    }
 
-  .details {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-left: auto;
-    margin-right: auto;
   }
-}
 
 @media (max-width: 858px) {
   .checkbtn {
