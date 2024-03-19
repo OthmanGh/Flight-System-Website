@@ -1,0 +1,223 @@
+body, html {
+    height: 100%;
+    margin: 0;
+  }
+
+  *{
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+  }
+
+  body{
+    font-family: montserrat;
+  }
+
+  nav{
+    background: #112D4E;
+    height: 7rem;
+    width: 100%;
+  }
+
+  label.logo{
+    color: white;
+    font-size: 3rem;
+    line-height: 80px;
+    padding: 0 100px;
+    font-weight: bold;
+  }
+
+  nav ul{
+    float: right;
+    margin-right: 20px;
+  }
+
+  nav ul li{
+    display: inline-block;
+    line-height: 80px;
+    margin: 0 5px;
+  }
+
+  nav ul li a{
+    color: white;
+    font-size: 2rem;
+    padding: 7px 13px;
+    border-radius: 3px;
+    text-transform: uppercase;
+  }
+
+  a:hover{
+    background: #133863;
+    transition: .5s;
+  }
+
+  .checkbtn{
+    font-size: 30px;
+    color: white;
+    float: right;
+    line-height: 80px;
+    margin-right: 40px;
+    cursor: pointer;
+    display: none;
+  }
+
+  #check{
+    display: none;
+  }
+
+
+  
+  .bgimg-1, .bgimg-2, .bgimg-3 {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .bgimg-1 {
+    background-image: url("../../assets/wing.jpg");
+    height: 70%;
+  }
+  .bgimg-2 {
+    background-image: url("../../assets/airplane.avif");
+    height: 20rem;
+  }
+
+.slogan{
+    padding-top: 20rem;
+    margin-bottom: auto;
+    margin:auto;
+    max-width: 110rem;
+    color: white;
+    
+}
+.icon{
+    max-height: 2rem;
+    margin-right: 1rem;
+}
+  .container{
+    margin: 0 auto;
+    max-width: 110rem;
+    margin-top: -15rem;
+    z-index: 5;
+  }
+
+  .tab-buttons {
+    display: flex;
+    
+  }
+  
+  .tab-button {
+    background-color: #e4e3e3;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    height: 4rem;
+    border-top-left-radius:0.2rem;
+    border-top-right-radius:0.2rem;
+    margin-right: 0.5rem;
+    color:#3f72af;
+    text-align: center;
+
+  }
+  
+  .tab-button:hover {
+    background-color: #ddd;
+  }
+  
+  .tab {
+    display: none;
+    width: 100%;
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 0 15px #93939385;
+  }
+  
+  .details{
+    height: 6rem;
+    width:17rem ;
+    padding:0 2rem;
+    
+
+  }
+
+.btn{
+    background-color: #112D4E;
+    color: white;
+    border-radius: 0.5rem;
+    width: 17rem;
+}
+
+  .active-tab-button {
+    background-color: #ffffff;
+    transform-origin: bottom;
+    color:#133863;
+    
+  } 
+  .radio{
+    padding:2rem;
+  }
+
+
+  input{
+    background-color: #efeeee;
+    border: 0;
+    border-radius: 0.5rem;
+  } 
+  .footer{
+    background-color: #112D4E;
+    color: white;
+    text-align: center;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+  }
+  @media (max-width: 952px){
+    label.logo{
+      font-size: 30px;
+      padding-left: 50px;
+    }
+
+    nav ul li a{
+      font-size: 16px;
+    }
+
+  }
+
+  @media (max-width: 858px){
+    .checkbtn{
+      display: block;
+    }
+
+    ul{
+      position: fixed;
+      width: 100%;
+      height: 100vh;
+      background: #112D4E;
+      top: 80px;
+      left: -100%;
+      text-align: center;
+      transition: all .5s;
+    }
+
+    nav ul li{
+      display: block;
+      margin: 50px 0;
+      line-height: 30px;
+    }
+
+    nav ul li a{
+      font-size: 20px;
+    }
+
+    a:hover,a.active{
+      background: none;
+      color: #0082e6;
+    }
+
+    #check:checked ~ ul{
+      left: 0;
+    }
+  }
