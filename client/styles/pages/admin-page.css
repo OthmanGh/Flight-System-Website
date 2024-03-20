@@ -1,11 +1,12 @@
 body {
   margin: 0;
   padding: 0;
+  position: relative;
 }
 
 .grid-container {
   display: grid;
-  grid-template-columns: 30rem auto;
+  grid-template-columns: 20rem auto;
   grid-template-rows: 100%;
 }
 
@@ -19,7 +20,7 @@ body {
 
 .screen-fixed {
   position: fixed;
-  width: 30rem;
+  width: 20rem;
 }
 
 .content {
@@ -46,7 +47,7 @@ body {
 }
 
 .title {
-  font-size: 3rem;
+  font-size: 2.4rem;
   gap: 1.5rem;
   margin-bottom: 2rem;
 }
@@ -76,7 +77,7 @@ body {
 }
 
 .status div {
-  font-size: 2.7rem;
+  font-size: 2.4rem;
 }
 
 h3 {
@@ -85,7 +86,7 @@ h3 {
 }
 
 .value {
-  font-size: 4rem;
+  font-size: 3.4rem;
   color: var(--clrs-blue-dark-);
   font-weight: bold;
 }
@@ -107,7 +108,7 @@ h3 {
 }
 
 .flights-title {
-  font-size: 3rem;
+  font-size: 2.4rem;
 }
 
 .cancel-save-btns {
@@ -121,7 +122,7 @@ h3 {
   border: 1px color;
   border-radius: 4px;
   cursor: pointer;
-  font-size: 2.4rem;
+  font-size: 1.8rem;
   border: 2px solid var(--clrs-blue-dark-);
   transition: all 0.3s ease-in-out;
 }
@@ -147,14 +148,13 @@ h3 {
   margin-bottom: 1rem;
   color: var(--clrs-blue-dark-);
   font-weight: bold;
-  font-size: 3rem;
+  font-size: 2.4rem;
 }
 
 form {
   justify-content: center;
   align-items: center;
   padding: 3rem 5rem;
-  gap: 40px;
   margin-top: 0 auto;
   border-radius: 12px;
   background-color: var(--clrs-blue-dark-);
@@ -184,12 +184,17 @@ form {
   outline: none;
 }
 
+input[placeholder='AUTOMATIC_GENERATED'] {
+  background-color: rgba(128, 128, 128, 0.299);
+  cursor: not-allowed;
+}
+
 fieldset {
   border: none;
 }
 
 legend {
-  font-size: 3rem;
+  font-size: 2rem;
   font-weight: 700;
   color: var(--clrs-clear-blue-);
 }
@@ -201,7 +206,7 @@ fieldset > div {
 /*Table */
 .flights-table {
   width: 100%;
-  font-size: 2.2rem;
+  font-size: 1.8rem;
   border-collapse: collapse;
   border: none;
   color: var(--clrs-blue-dark-);
@@ -218,7 +223,7 @@ fieldset > div {
 }
 
 .flights-table td {
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   color: gray;
 }
 
@@ -270,3 +275,20 @@ fieldset > div {
   color: var(--clrs-blue-dark-);
   border-radius: 2px solid var(--clrs-blue-dark-);
 }
+
+/* .overlay {
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.9);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
+} */
+
+/* .update-flight-infos {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 20;
+} */

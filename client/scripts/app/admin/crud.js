@@ -1,5 +1,14 @@
 const flightsInfosContainer = document.getElementById('flights-infos-container');
+const addFlightBtn = document.getElementById('add-flight-btn');
 const path = 'http://localhost/Flight-System-Website/server/admin/flights';
+const form = document.getElementById('form');
+const destination = document.getElementById('destination');
+const airline = document.getElementById('airline');
+const price = document.getElementById('price');
+const departureDate = document.getElementById('departure-date');
+const departureAirport = document.getElementById('departure-airport');
+const arrivalAirport = document.getElementById('arrival-airport');
+const arrivalDate = document.getElementById('arrival-date');
 
 const flightComponent = ({
   flight_id,
@@ -21,12 +30,12 @@ const flightComponent = ({
   <td>${price}</td>
 
   <td class="edit-flight">
-  <img class="edit-btn" id="edit-btn" alt="edit logo" src="http://localhost/Flight-System-Website/client/assets/edit.svg" />
+    <img class="edit-btn" id="edit-btn" alt="edit logo" src="http://localhost/Flight-System-Website/client/assets/edit.svg" />
   </td>
-  <td  class="delete-flight">
-  <img class="delete-btn" id="delete-btn"  alt="trash logo" src="http://localhost/Flight-System-Website/client/assets/trash.svg" />
+  <td class="delete-flight">
+    <img class="delete-btn" id="delete-btn" alt="trash logo" src="http://localhost/Flight-System-Website/client/assets/trash.svg" />
   </td>
-  </tr>`;
+</tr>`;
 
 const renderFlightsInfos = ({ status, flights }) => {
   flightsInfosContainer.innerHTML = '';
@@ -49,11 +58,40 @@ const deleteFlight = async (flightId) => {
 
 const readFlights = async () => {
   const url = `${path}/read.php`;
-  const response = await fetch(url);
-  const infos = await response.json();
+  try {
+    const response = await fetch(url);
+    const infos = await response.json();
+    renderFlightsInfos(infos);
+  } catch (error) {
+    console.error('Error reading flights:', error);
+  }
+};
 
-  console.log(infos);
-  renderFlightsInfos(infos);
+const createFlights = () => {
+  const url = `${path}/create.php`;
+  const formatData = new FormData();
+
+  formatData.append('destination', destination.value);
+  formatData.append('airline_id', airline.value);
+  formatData.append('price', price.value);
+  formatData.append('departure_date', departureDate.value);
+  formatData.append('departure_airport', departureAirport.value);
+  formatData.append('arrival_date', arrivalDate.value);
+  formatData.append('arrival_airport', arrivalAirport.value);
+
+  const options = {
+    method: 'POST',
+    body: formatData,
+  };
+
+  return fetch(url, options)
+    .then((response) => response.json())
+    .then((infos) => {
+      renderFlightsInfos(infos);
+    })
+    .catch((error) => {
+      console.error('Error creating flights:', error);
+    });
 };
 
 flightsInfosContainer.addEventListener('click', async (e) => {
@@ -68,3 +106,16 @@ flightsInfosContainer.addEventListener('click', async (e) => {
 });
 
 readFlights();
+
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+  createFlights();
+
+  destination.value = '';
+  airline.value = '';
+  price.value = '';
+  departureDate.value = '';
+  departureAirport.value = '';
+  arrivalDate.value = '';
+  arrivalAirport.value = '';
+});

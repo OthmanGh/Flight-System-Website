@@ -1,41 +1,37 @@
-const from=document.getElementById('searchFlight-form');
-const departureAirport=document.getElementById('departure-airport');
-const arrivalAirport=document.getElementById('arrival-airport');
-const departureDate=document.getElementById('departure-date');
-const arrivalDate=document.getElementById('arrival-date');
-const passengers=document.getElementById('passengers');
-const searchFlightsContainer=document.getElementById('search-result-container');
+const from = document.getElementById('searchFlight-form');
+const departureAirport = document.getElementById('departure-airport');
+const arrivalAirport = document.getElementById('arrival-airport');
+const departureDate = document.getElementById('departure-date');
+const arrivalDate = document.getElementById('arrival-date');
+const passengers = document.getElementById('passengers');
+const searchFlightsContainer = document.getElementById('search-result-container');
 
 const clearSearchInputs = () => {
-    departureAirport.value = '';
-    arrivalAirport.value = '';
-    departureDate.value = '';
-    arrivalDate.value = '';
-    passengers.value = '';
-  };
+  departureAirport.value = '';
+  arrivalAirport.value = '';
+  departureDate.value = '';
+  arrivalDate.value = '';
+  passengers.value = '';
+};
 
-
-from.addEventListener("submit",(e)=>{
+from.addEventListener('submit', (e) => {
   e.preventDefault();
   searchFlights();
 });
 
 const searchFlights = () => {
-  const url="http://localhost/Flight-System-Website/server/landing-page/search-flights.php";
-  const formatData=new FormData();
+  const url = 'http://localhost/Flight-System-Website/server/landing-page/search-flights.php';
+  const formatData = new FormData();
 
-  formatData.append('departure_airport',departureAirport.value);
-  formatData.append('arrival_airport',arrivalAirport.value);
-  formatData.append('departure_date',departureDate.value);
-  formatData.append('arrival_date',arrivalDate.value);
+  formatData.append('departure_airport', departureAirport.value);
+  formatData.append('arrival_airport', arrivalAirport.value);
+  formatData.append('departure_date', departureDate.value);
+  formatData.append('arrival_date', arrivalDate.value);
 
-  
-
-  const options={
-    method: "POST",
-    body:formatData,
-
-  }
+  const options = {
+    method: 'POST',
+    body: formatData,
+  };
 
   fetch(url, options)
     .then((response) => {
@@ -67,11 +63,11 @@ const displayFlights = () => {
     </table>`;
 
   const searchResultsBody = document.getElementById('searchResultsBody');
-  searchResultsBody.innerHTML="";
+  searchResultsBody.innerHTML = '';
   arr?.forEach((item) => {
     searchResultsBody.innerHTML += renderSearch(item);
   });
-}
+};
 
 const renderSearch = (item) => {
   return `
@@ -82,9 +78,7 @@ const renderSearch = (item) => {
       <td>${item.arrival_date}</td>
       <td>${item.price}</td>
     </tr>`;
-}
-
-
+};
 
 function toggleTab(tabIndex) {
   let tabs = document.getElementsByClassName('tab');
@@ -104,3 +98,5 @@ function toggleTab(tabIndex) {
 }
 
 toggleTab(0);
+
+console.log(localStorage.getItem('id'));

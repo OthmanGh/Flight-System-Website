@@ -37,7 +37,7 @@
 
           <div class="flex column">
             <label for="user-password-login">Password <span class="red-start">*</span></label>
-            <input id="user-password-login" type="password" placeholder="user123" required />
+            <input id="user-password-login" type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" placeholder="user123" required />
             <span>forgot password</span>
           </div>
 
@@ -46,6 +46,8 @@
             <p>Don't have account?</p>
             <span id="switch-to-register" class="switch-to-login">Sign up</span>
           </div>
+
+          <p class="error-message"></p>
         </div>
       </form>
 
@@ -83,6 +85,7 @@
             <p>Already have an account?</p>
             <span id="switch-to-login" class="switch-to-login">Login</span>
           </div>
+          <p class="error-message"></p>
         </div>
       </form>
     </main>

@@ -64,28 +64,28 @@
           <div class="create-flights-container">
             <h2 class="secondary-header">Add Flight</h2>
 
-            <form class="flex">
+            <form id="form" class="flex">
               <fieldset>
                 <legend>Flight Information</legend>
 
                 <div class="inputs-wrapper flex column">
                   <label for="flight-number">Flight Number:</label>
-                  <input name="flight-number" type="number" required />
+                  <input id="flight-id" name="flight-number" type="number" readonly placeholder="AUTOMATIC_GENERATED" required />
                 </div>
 
                 <div class="inputs-wrapper flex column">
                   <label for="destination">Destination:</label>
-                  <input name="destination" type="text" required />
+                  <input id="destination" name="destination" type="text" required />
                 </div>
 
                 <div class="inputs-wrapper flex column">
                   <label for="airline">Airline:</label>
-                  <input name="airline" type="text" required />
+                  <input id="airline" name="airline" type="text" required />
                 </div>
 
                 <div class="inputs-wrapper flex column">
                   <label for="price">Price:</label>
-                  <input name="price" type="number" required />
+                  <input id="price" name="price" type="number" required />
                 </div>
               </fieldset>
 
@@ -94,26 +94,26 @@
 
                 <div class="inputs-wrapper flex column">
                   <label for="departure-date">Departure Date:</label>
-                  <input name="departure-date" type="date" required />
+                  <input id="departure-date" name="departure-date" type="datetime" required />
                 </div>
 
                 <div class="inputs-wrapper flex column">
                   <label for="arrival-date">Arrival Date:</label>
-                  <input name="arrival-date" type="date" required />
+                  <input id="arrival-date" name="arrival-date" type="datetime" required />
                 </div>
 
                 <div class="inputs-wrapper flex column">
                   <label for="departure-airport">Departure Airport:</label>
-                  <input name="departure-airport" type="text" required />
+                  <input id="departure-airport" name="departure-airport" type="text" required />
                 </div>
 
                 <div class="inputs-wrapper flex column">
                   <label for="arrival-airport">Arrival Airport:</label>
-                  <input name="arrival-airport" type="text" required />
+                  <input id="arrival-airport" name="arrival-airport" type="text" required />
                 </div>
               </fieldset>
 
-              <button class="add-flight-btn" type="submit">Add</button>
+              <button id="add-flight-btn" class="add-flight-btn" type="submit">Add</button>
             </form>
           </div>
 
@@ -149,6 +149,8 @@
               </tbody>
             </table>
           </div>
+
+          <div class="overlay"></div>
         </div>
 
         <div class="bookings hidden">

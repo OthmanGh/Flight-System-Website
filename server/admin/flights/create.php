@@ -1,7 +1,6 @@
 <?php
 include("../../connection.php");
 
-
 $destination =  $_POST['destination'];
 $departure_date = $_POST['departure_date'];
 $arrival_date = $_POST['arrival_date'];
@@ -15,10 +14,21 @@ $flight = $mysqli->prepare('INSERT INTO flights(destination, departure_date, arr
 
 $flight->bind_param('sssssds', $destination, $departure_date, $arrival_date, $departure_airport, $arrival_airport, $price, $airline);
 
-
 if ($flight->execute()) {
+
+    $query = $mysqli->prepare('SELECT * FROM flights');
+
+    $query->execute();
+
+    $result = $query->get_result();
+
+    $flights = array();
+    while ($row = $result->fetch_assoc()) {
+        $flights[] = $row;
+    }
     $response['status'] = 'Success';
     $response['message'] = 'data successfully inserted';
+    $response['flights'] = $flights;
 } else {
     $response['status'] = 'Failed';
 }
