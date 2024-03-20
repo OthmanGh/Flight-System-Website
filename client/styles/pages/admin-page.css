@@ -174,11 +174,8 @@ h3 {
   color: var(--clrs-blue-light-) !important;
 }
 
-.edit-logo,
-.trash-logo {
-  cursor: pointer;
-}
-
-.trash-logo {
+#edit-btn,
+#delete-btn {
   margin: 0 auto;
+  cursor: pointer;
 }
