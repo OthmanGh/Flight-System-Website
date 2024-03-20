@@ -14,7 +14,19 @@ const clearSearchInputs = () => {
   passengers.value = '';
 };
 
-from.addEventListener('submit', (e) => {
+//   $destination = $_POST['destination'];
+// $departure_date = $_POST['departure_date'];
+// $arrival_date = $_POST['arrival_date'];
+// $price = $_POST['price'];
+
+
+// $query = $mysqli->prepare("SELECT destination, departure_date, arrival_date, price FROM flights WHERE departure_date>=? AND arrival_date <=?");
+// $query->bind_param('ss', $departure_date, $arrival_date);
+// $query->execute();
+// $query->store_result();
+// $query->bind_result($destination, $departure_date, $arrival_date, $
+
+from.addEventListener("submit",(e)=>{
   e.preventDefault();
   searchFlights();
 });
@@ -28,10 +40,12 @@ const searchFlights = () => {
   formatData.append('departure_date', departureDate.value);
   formatData.append('arrival_date', arrivalDate.value);
 
-  const options = {
-    method: 'POST',
-    body: formatData,
-  };
+  const options={
+    method: "POST",
+    body:formatData
+
+  }
+  console.log(formatData);
 
   fetch(url, options)
     .then((response) => {
@@ -39,14 +53,14 @@ const searchFlights = () => {
     })
     .then((data) => {
       console.log(data);
-      displayFlights(data.flights);
+      displayFlights(data);
     })
     .catch((error) => {
       console.error(error);
     });
 };
 
-const displayFlights = () => {
+const displayFlights = (data) => {
   searchFlightsContainer.innerHTML = `
     <table>
       <thead>
@@ -58,13 +72,13 @@ const displayFlights = () => {
           <th>Price</th>
         </tr>
       </thead>
-      <tbody id="searchResultsBody">
+      <tbody id="search-results-body">
       </tbody>
     </table>`;
 
-  const searchResultsBody = document.getElementById('searchResultsBody');
-  searchResultsBody.innerHTML = '';
-  arr?.forEach((item) => {
+  const searchResultsBody = document.getElementById('search-results-body');
+  searchResultsBody.innerHTML="";
+  data.flights.forEach((item) => {
     searchResultsBody.innerHTML += renderSearch(item);
   });
 };

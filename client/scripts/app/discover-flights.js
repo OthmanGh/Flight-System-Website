@@ -1,5 +1,5 @@
 const discoverFlightsContainer=document.getElementById("discover-flights-container");
-
+const localFlightId="";
       const getAllFlights = () => {
         fetch("http://localhost/Flight-System-Website/server/landing-page/discover-flights.php", {
           method: "GET",
@@ -8,6 +8,8 @@ const discoverFlightsContainer=document.getElementById("discover-flights-contain
             return response.json();
           })
           .then((data) => {
+            
+            console.log(data);
             displayAllFlights(data);
           })
           .catch((error) => {
@@ -47,7 +49,7 @@ const discoverFlightsContainer=document.getElementById("discover-flights-contain
             <td>${item.departure_date}</td>
             <td>${item.arrival_date}</td>
             <td>${item.price}</td>
-            <td></td>
+            <td><button class="btn">Book Now</button></td>
           </tr>`;
       }
-           
+getAllFlights();

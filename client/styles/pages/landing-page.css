@@ -12,10 +12,6 @@ html {
   box-sizing: border-box;
 }
 
-body {
-  font-family: montserrat;
-}
-
 nav {
   background: #112d4e;
   height: 7rem;
@@ -70,8 +66,7 @@ a:hover {
 }
 
 .bgimg-1,
-.bgimg-2,
-.bgimg-3 {
+.bgimg-2{
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -81,6 +76,7 @@ a:hover {
   background-image: url('../../assets/wing.jpg');
   height: 70%;
 }
+
 .bgimg-2 {
   background-image: url('../../assets/airplane.avif');
   height: 20rem;
@@ -93,10 +89,12 @@ a:hover {
   max-width: 110rem;
   color: white;
 }
+
 .icon {
   max-height: 2rem;
   margin-right: 1rem;
 }
+
 .container {
   margin: 0 auto;
   max-width: 110rem;
@@ -122,7 +120,96 @@ a:hover {
     text-align: center;
 
   }
+  
+  .tab-button:hover {
+    background-color: #ddd;
+  }
+  
+  .tab {
+    display: none;
+    width: 100%;
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 0 15px #93939385;
+  }
+  
+  select {
+    height: 6rem;
+    width:20rem ;
+    color: black; /* Change the text color of the options */
+}
+
+/* Add this CSS to your stylesheet */
+#airline {
+  color: black; /* Change the text color of the options */
+}
+
+#airline option {
+  color: black; /* Change the text color of the options */
+  background-color: white; /* Change the background color of the options */
+}
+
+  
+  .details{
+    height: 6rem;
+    width:20rem ;
+    padding:0 2rem; 
+ 
+  }
+  
+  .btn {
+    background-color: #112d4e;
+    color: white;
+    border-radius: 0.5rem;
+    width: 17rem;
+  }
+  
+  .active-tab-button {
+    background-color: #ffffff;
+    transform-origin: bottom;
+    color:#133863;
+    
+  } 
+  
+  #search-cesult-container{
+    position: relative;
+    
+  }
+  
+  .search-result{
+    
+    position: absolute;
+    top:0;
+    
+    border-bottom: #112D4E;
+  }
+  
+  input{
+    background-color: #efeeee;
+    border: 0;
+    border-radius: 0.5rem;
+  } 
+  
+  table {
+    margin: 7rem 0;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  th, td {
+    border-bottom: solid 0.1rem #112D4E;
+    text-align: left;
+    padding: 8px;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
   .grid__container {
+    width:80%;
+    margin: 10rem auto;
+    text-align: center;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     align-items: center;
@@ -186,81 +273,11 @@ a:hover {
   }
   
   .grid a:hover {
-    color: hsla(16, 81%, 46%, 0.8);
+    color: hsla(0, 0%, 100%, 0.742);
     background-color: transparent;
     border: 2px solid hsla(16, 81%, 46%, 0.8);
   }
   
-  .tab-button:hover {
-    background-color: #ddd;
-  }
-  
-  .tab {
-    display: none;
-    width: 100%;
-    padding: 20px;
-    background-color: #ffffff;
-    box-shadow: 0 0 15px #93939385;
-  }
-  
-  .details{
-    height: 6rem;
-    width:17rem ;
-    padding:0 2rem;
-    
-
-  }
-
-.btn {
-  background-color: #112d4e;
-  color: white;
-  border-radius: 0.5rem;
-  width: 17rem;
-}
-
-  .active-tab-button {
-    background-color: #ffffff;
-    transform-origin: bottom;
-    color:#133863;
-    
-  } 
-
-  #search-cesult-container{
-    position: relative;
-    
-  }
-
-  .search-result{
-
-    position: absolute;
-    top:0;
-    
-    border-bottom: #112D4E;
-  }
-
-
-  input{
-    background-color: #efeeee;
-    border: 0;
-    border-radius: 0.5rem;
-  } 
-
-  table {
-    margin: 7rem 0;
-    border-collapse: collapse;
-    width: 100%;
-  }
-  
-  th, td {
-    border-bottom: solid 0.1rem #112D4E;
-    text-align: left;
-    padding: 8px;
-  }
-  
-  tr:nth-child(even) {
-    background-color: #f2f2f2;
-  }
-
   .footer{
     background-color: #112D4E;
     color: white;
