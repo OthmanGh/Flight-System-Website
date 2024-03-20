@@ -138,7 +138,7 @@ h3 {
 /*Table */
 .flights-table {
   width: 100%;
-  font-size: 2.5rem;
+  font-size: 2.2rem;
   border-collapse: collapse;
   border: none;
   color: var(--clrs-blue-dark-);
@@ -154,7 +154,7 @@ h3 {
 }
 
 .flights-table td {
-  font-size: 2rem;
+  font-size: 1.8rem;
   color: gray;
 }
 
@@ -172,4 +172,13 @@ h3 {
 
 .flight-number {
   color: var(--clrs-blue-light-) !important;
+}
+
+.edit-logo,
+.trash-logo {
+  cursor: pointer;
+}
+
+.trash-logo {
+  margin: 0 auto;
 }

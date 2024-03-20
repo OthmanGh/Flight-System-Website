@@ -36,8 +36,12 @@ const flightComponent = ({
 <td>${departure_airport}</td>
 <td>${arrival_airport}</td>
 <td>${price}</td>
-<td id="edit-flight">Edit</td>
-<td id="delete-flight">Delete</td>
+<td id="delete-flight">
+<img alt="edit logo" src="http://localhost/Flight-System-Website/client/assets/edit.svg" />
+</td>
+<td class="edit-logo" id="edit-flight">
+<img class="trash-logo" alt="trash logo" src="http://localhost/Flight-System-Website/client/assets/trash.svg" />
+</td>
 </tr>`;
 
 getFlightsInfos();
