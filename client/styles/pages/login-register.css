@@ -19,17 +19,19 @@ main {
   display: flex;
   margin-bottom: 100px;
   width: 100%;
-  margin: 100px auto;
-  height: 70vh;
+  margin: 50px auto;
+  height: 82vh;
   overflow: hidden;
   border-radius: 12px;
-  transition: opacity 0.3s ease;
+  transition: all 0.3s ease-in-out;
 }
+
+/* .form:hover {
+  transform: scale(0.98);
+} */
 
 .image-container {
   width: 50%;
-  height: 100%;
-  overflow: hidden;
 }
 
 .image-container img {
@@ -112,6 +114,7 @@ button {
   border-radius: 0.3rem;
   cursor: pointer;
   transition: all 0.3s;
+  margin-bottom: 2rem;
 }
 
 button:hover {
