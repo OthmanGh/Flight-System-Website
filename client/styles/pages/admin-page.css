@@ -6,7 +6,7 @@ body {
 .grid-container {
   display: grid;
   grid-template-columns: 30rem auto;
-  grid-template-rows: 100vh;
+  grid-template-rows: 100%;
 }
 
 .sidebar {
@@ -14,6 +14,12 @@ body {
   width: 100%;
   background-color: var(--clrs-blue-dark-);
   color: var(--clrs-white-);
+  position: relative;
+}
+
+.screen-fixed {
+  position: fixed;
+  width: 30rem;
 }
 
 .content {
@@ -89,19 +95,19 @@ h3 {
 .flights {
   display: flex;
   flex-direction: column;
-  gap: 7rem;
+  gap: 4rem;
 }
 
 .flights-header {
   color: var(--clrs-white-);
   background-color: var(--clrs-blue-dark-);
-  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.6);
+  box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.3);
   padding: 2rem 3rem;
   border-radius: 12px;
 }
 
 .flights-title {
-  font-size: 5rem;
+  font-size: 3rem;
 }
 
 .cancel-save-btns {
@@ -135,6 +141,63 @@ h3 {
   color: var(--clrs-white-);
 }
 
+/* Inputs : */
+
+.secondary-header {
+  margin-bottom: 1rem;
+  color: var(--clrs-blue-dark-);
+  font-weight: bold;
+  font-size: 3rem;
+}
+
+form {
+  justify-content: center;
+  align-items: center;
+  padding: 3rem 5rem;
+  gap: 40px;
+  margin-top: 0 auto;
+  border-radius: 12px;
+  background-color: var(--clrs-blue-dark-);
+  box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.3);
+  position: relative;
+}
+
+.inputs-wrapper {
+  background-color: var(--clrs-blue-dark-);
+  padding: 2rem;
+  color: var(--clrs-white-);
+  max-width: 700px;
+  width: 500px;
+}
+
+.inputs-wrapper label {
+  font-size: 500;
+  margin-bottom: 5px;
+}
+
+.inputs-wrapper input {
+  padding: 0.7rem 1rem;
+  border-radius: 3px;
+  background-color: #122845;
+  border: 1px solid rgba(255, 255, 255, 0.247);
+  color: var(--clrs-white-);
+  outline: none;
+}
+
+fieldset {
+  border: none;
+}
+
+legend {
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--clrs-clear-blue-);
+}
+
+fieldset > div {
+  padding: 1rem;
+}
+
 /*Table */
 .flights-table {
   width: 100%;
@@ -143,6 +206,7 @@ h3 {
   border: none;
   color: var(--clrs-blue-dark-);
   background-color: var(--clrs-blue-dark-);
+  box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.2);
 }
 
 .flights-table th,
@@ -178,4 +242,31 @@ h3 {
 #delete-btn {
   margin: 0 auto;
   cursor: pointer;
+}
+
+.flights-infos-container {
+  overflow: hidden;
+}
+
+.add-flight-btn {
+  position: absolute;
+  top: 3.2rem;
+  right: 5rem;
+  background-color: var(--clrs-blue-light-);
+  color: var(--clrs-white-);
+  padding: 1rem 3rem;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: all 0.3s;
+  border-radius: 1px solid var(--clrs-blue-light-);
+  font-weight: bold;
+  font-size: 2.2rem;
+  border-radius: 4px;
+}
+
+.add-flight-btn:hover {
+  background-color: var(--clrs-white-);
+  color: var(--clrs-blue-dark-);
+  border-radius: 2px solid var(--clrs-blue-dark-);
 }
