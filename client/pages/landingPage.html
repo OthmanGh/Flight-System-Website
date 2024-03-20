@@ -18,10 +18,9 @@
 
       <ul>
         <li><a class="active" href="#">Home</a></li>
-        <li><a href="#">Booking</a></li>
-        <li><a href="#">Discover</a></li>
-        <li><a href="#">Coins</a></li>
-        <li><a href="../pages/adminPage.html">SIGN IN</a></li>
+        <li><a href="#">About us</a></li>
+        <li><a href="#">FAQ</a></li>
+        <li><a href="#">Profile</a></li>
       </ul>
     </nav>
 
@@ -35,18 +34,17 @@
 
         <button class="tab-button flex row" onclick="toggleTab(1)"><img class="icon flex row" src="../assets/suitcase.svg" />Display Available</button>
 
-        <button class="tab-button flex row" onclick="toggleTab(2)">Details</button>
+        <button class="tab-button flex row" onclick="toggleTab(2)">Flight Status</button>
       </div>
 
   <div class="tab" id="tab1">
     
     <div >
-      <form id="searchFlight-form" class="containerOptions j-s__between ">
+      <form id="searchFlight-form" class="containerOptions flex j-s__between ">
         <input class="details" type="text" name="departure_airport" id="departure-airport" placeholder="From">
         <input class="details" type="text" name="arrival_airport" id="arrival-airport" placeholder="To">
-          <input class="details" type="date" name="departure_date" id="departure-date" placeholder="Departure Date">
-          <input class="details" type="date" name="arrival_date" id="arrival-date" placeholder="Arrival Date">
-          <input class="details" type="number" id="person" placeholder="Passengers">
+          <input class="details" type="datetime" name="departure_date" id="departure-date" placeholder="Departure Date">
+          <input class="details" type="datetime" name="arrival_date" id="arrival-date" placeholder="Arrival Date">
           <button class="details btn" type="submit">Search Flights</button>
         </form>
       </div>
@@ -61,62 +59,71 @@
 
     </div>
   </div>
-  <div class="tab" id="tab3">
-    <h2>We're here to help!</h2>
-    <p>At OYS, we're dedicated to simplifying travel by offering seamless flight booking experiences. With a user-friendly interface, we provide access to a wide selection of flights from leading airlines, ensuring you find the best options for your needs. Our committed team is available 24/7 to assist you, ensuring your journey is smooth from booking to boarding.
+  <div class="tab " id="tab3">
 
-    </p>
+    <form action="get-status.php" class="flex j-s__between" method="post">
+      <input class="option" type="number" name="flight_id" id="flight_id" placeholder="Flight ID">
+      <label for="airline">Select Airline:</label>
+      <select name="airline" class="option" id="airline"></select>
+      <input class="btn" type="submit" value="Submit">
+    </form>
+    
   </div>
+  
+</div>
 
-    </div>
-
-    <div class="grid__container">
-      <div class="grid__1 grid">
-        <img
-          src="https://images.unsplash.com/photo-1569530593439-c5a3adda5204?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-          class="grid__img"
-        />
+<div>
+      <div class="grid__container">
+        <div class="grid__1 grid">
+          <img
+            src="https://images.unsplash.com/photo-1569530593439-c5a3adda5204?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            class="grid__img"
+          />
+        </div>
+      
+        <div class="grid__2 grid">
+          <h3 class="grid__title">Hisma Desert – NEOM, Saudi Arabia</h3>
+          <p>The NEOM Nature Reserve region is being designed to deliver protection and restoration of biodiversity across 95% of NEOM.</p>
+          <a href="./pages/destination.html"> Learn more-></a>
+        </div>
+      
+        <div class="grid__3 grid">
+          <img
+            src="https://images.unsplash.com/photo-1499678329028-101435549a4e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            class="grid__img"
+          />
+        </div>
+      
+        <div class="grid__4 grid">
+          <h3 class="grid__title">Hot air balloons in Cappadocia Turkey</h3>
+          <p>
+            Vast expanse of golden sands stretching endlessly under the brilliant desert sun, offering travelers a serene and timeless landscape to explore
+            and discover.
+          </p>
+          <a href="./pages/destination.html"> Learn more-></a>
+        </div>
+      
+        <div class="grid__5 grid">
+          <img
+            src="https://images.unsplash.com/photo-1682695795255-b236b1f1267d?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            class="grid__img"
+          />
+        </div>
+      
+        <div class="grid__6 grid">
+          <h3 class="grid__title">Vernazza sunset</h3>
+          <p>Serene coastal village bathed in golden light as the sun sets over the horizon, creating unforgettable moments for travelers.</p>
+          <a href="./pages/destination.html"> Learn more-></a>
+        </div>
       </div>
 
-      <div class="grid__2 grid">
-        <h3 class="grid__title">Hisma Desert – NEOM, Saudi Arabia</h3>
-        <p>The NEOM Nature Reserve region is being designed to deliver protection and restoration of biodiversity across 95% of NEOM.</p>
-        <a href="./pages/destination.html"> Learn more-></a>
-      </div>
 
-      <div class="grid__3 grid">
-        <img
-          src="https://images.unsplash.com/photo-1499678329028-101435549a4e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-          class="grid__img"
-        />
-      </div>
-
-      <div class="grid__4 grid">
-        <h3 class="grid__title">Hot air balloons in Cappadocia Turkey</h3>
-        <p>
-          Vast expanse of golden sands stretching endlessly under the brilliant desert sun, offering travelers a serene and timeless landscape to explore
-          and discover.
-        </p>
-        <a href="./pages/destination.html"> Learn more-></a>
-      </div>
-
-      <div class="grid__5 grid">
-        <img
-          src="https://images.unsplash.com/photo-1682695795255-b236b1f1267d?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-          class="grid__img"
-        />
-      </div>
-
-      <div class="grid__6 grid">
-        <h3 class="grid__title">Vernazza sunset</h3>
-        <p>Serene coastal village bathed in golden light as the sun sets over the horizon, creating unforgettable moments for travelers.</p>
-        <a href="./pages/destination.html"> Learn more-></a>
-      </div>
     </div>
     <div class="bgimg-2"></div>
 
     <script src="../scripts/app/landing-page.js"></script>
     <script src="../scripts/app/discover-flights.js"></script>
+    <script src="../scripts/app/get-airlines.js"></script>
   </body>
 
   <footer class="footer">OYS © All right sreserved</footer>

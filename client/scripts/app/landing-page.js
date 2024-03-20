@@ -14,6 +14,17 @@ const clearSearchInputs = () => {
     passengers.value = '';
   };
 
+//   $destination = $_POST['destination'];
+// $departure_date = $_POST['departure_date'];
+// $arrival_date = $_POST['arrival_date'];
+// $price = $_POST['price'];
+
+
+// $query = $mysqli->prepare("SELECT destination, departure_date, arrival_date, price FROM flights WHERE departure_date>=? AND arrival_date <=?");
+// $query->bind_param('ss', $departure_date, $arrival_date);
+// $query->execute();
+// $query->store_result();
+// $query->bind_result($destination, $departure_date, $arrival_date, $
 
 from.addEventListener("submit",(e)=>{
   e.preventDefault();
@@ -33,9 +44,10 @@ const searchFlights = () => {
 
   const options={
     method: "POST",
-    body:formatData,
+    body:formatData
 
   }
+  console.log(formatData);
 
   fetch(url, options)
     .then((response) => {
@@ -43,14 +55,14 @@ const searchFlights = () => {
     })
     .then((data) => {
       console.log(data);
-      displayFlights(data.flights);
+      displayFlights(data);
     })
     .catch((error) => {
       console.error(error);
     });
 };
 
-const displayFlights = () => {
+const displayFlights = (data) => {
   searchFlightsContainer.innerHTML = `
     <table>
       <thead>
@@ -62,13 +74,13 @@ const displayFlights = () => {
           <th>Price</th>
         </tr>
       </thead>
-      <tbody id="searchResultsBody">
+      <tbody id="search-results-body">
       </tbody>
     </table>`;
 
-  const searchResultsBody = document.getElementById('searchResultsBody');
+  const searchResultsBody = document.getElementById('search-results-body');
   searchResultsBody.innerHTML="";
-  arr?.forEach((item) => {
+  data.flights.forEach((item) => {
     searchResultsBody.innerHTML += renderSearch(item);
   });
 }
