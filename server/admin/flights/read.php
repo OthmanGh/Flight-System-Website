@@ -11,7 +11,7 @@ if ($num_rows == 0) {
 } else {
     $flights = [];
 
-    $query->bind_result($flight_id, $destination, $departure_date, $arrival_date, $departure_airport, $arrival_airport, $price, $airline_id);
+    $query->bind_result($flight_id, $destination, $departure_date, $arrival_date, $departure_airport, $arrival_airport, $price, $airline);
 
     while ($query->fetch()) {
 
@@ -23,7 +23,7 @@ if ($num_rows == 0) {
             'departure_airport' => $departure_airport,
             'arrival_airport' => $arrival_airport,
             'price' => $price,
-            'airline_id' => $airline_id,
+            'airline_id' => $airline,
         ];
 
         $flights[] = $flight;
