@@ -9,7 +9,8 @@
     <link rel="stylesheet" href="../styles/style.css" />
     <link rel="stylesheet" href="../styles/pages/admin-page.css" />
 
-    <script defer src="../scripts/app/admin.js"></script>
+    <script defer src="../scripts/app/admin/admin.js"></script>
+    <script defer src="../scripts/app/admin/crud.js"></script>
   </head>
 
   <body>
@@ -62,6 +63,7 @@
             <tr class="table-titles">
               <th>Number</th>
               <th>Destination</th>
+              <th>Airline</th>
               <th>Departure Date</th>
               <th>Arrival Date</th>
               <th>Departure Airport</th>
@@ -71,17 +73,19 @@
               <th>Delete</th>
             </tr>
 
-            <tr class="flights-info">
-              <td class="flight-number">427893</td>
-              <td>Middle East</td>
-              <td>2024/2/12</td>
-              <td>2024/2/12</td>
-              <td>FAX</td>
-              <td>JAV</td>
-              <td>250</td>
-              <td>Edit</td>
-              <td>Delete</td>
-            </tr>
+            <tbody id="flights-infos-container">
+              <tr class="flights-info">
+                <td class="flight-number">427893</td>
+                <td>Middle East</td>
+                <td>2024/2/12</td>
+                <td>2024/2/12</td>
+                <td>FAX</td>
+                <td>JAV</td>
+                <td>250</td>
+                <td>Edit</td>
+                <td>Delete</td>
+              </tr>
+            </tbody>
           </table>
         </div>
 
