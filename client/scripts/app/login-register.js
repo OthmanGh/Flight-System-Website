@@ -25,17 +25,28 @@ const userLogin = async (e) => {
     body: formatData,
   };
 
+  const res = await fetch(url, options);
+  const data = await res.json();
+
+  console.log(data);
+
   try {
     const res = await fetch(url, options);
     const data = await res.json();
 
     console.log(data);
 
-    if (data['status'] === 'success') {
+    if (data['status'] === 'success' && data['email'] === 'admin@gmail.com') {
+      clearRegisterInputs();
+      localStorage.setItem('id', data['id']);
+      window.location.href = 'http://127.0.0.1:5500/client/pages/adminPage.html';
+      return;
+    } else if (data['status'] === 'success') {
       clearRegisterInputs();
       localStorage.setItem('id', data['id']);
       window.location.href = 'http://127.0.0.1:5500/client/pages/landingPage.html';
     } else {
+      data['message'];
     }
   } catch (error) {
     console.error(error);

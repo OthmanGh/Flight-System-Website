@@ -16,10 +16,12 @@
   <body>
     <div class="grid-container">
       <aside class="sidebar">
-        <p id="nav" class="nav-active">Dashboards</p>
-        <p id="nav">Flights</p>
-        <p id="nav">Bookings</p>
-        <p id="nav">Feedback</p>
+        <div class="screen-fixed">
+          <p id="nav" class="nav-active">Dashboards</p>
+          <p id="nav">Flights</p>
+          <p id="nav">Bookings</p>
+          <p id="nav">Feedback</p>
+        </div>
       </aside>
 
       <main class="content">
@@ -53,40 +55,102 @@
         <div class="flights hidden flex column">
           <div class="flights-header flex row a-center j-s__between">
             <h2 class="flights-title">Flights</h2>
-            <div class="cancel-save-btns flex">
+            <!-- <div class="cancel-save-btns flex">
               <button class="btn cancel-btn">Cancel</button>
               <button class="btn save-btn">Save</button>
-            </div>
+            </div> -->
           </div>
 
-          <table class="flights-table">
-            <tr class="table-titles">
-              <th>Number</th>
-              <th>Destination</th>
-              <th>Airline</th>
-              <th>Departure Date</th>
-              <th>Arrival Date</th>
-              <th>Departure Airport</th>
-              <th>Arrival Airport</th>
-              <th>Price</th>
-              <th>Edit</th>
-              <th>Delete</th>
-            </tr>
+          <div class="create-flights-container">
+            <h2 class="secondary-header">Add Flight</h2>
 
-            <tbody id="flights-infos-container">
-              <tr class="flights-info">
-                <td class="flight-number">427893</td>
-                <td>Middle East</td>
-                <td>2024/2/12</td>
-                <td>2024/2/12</td>
-                <td>FAX</td>
-                <td>JAV</td>
-                <td>250</td>
-                <td>Edit</td>
-                <td>Delete</td>
+            <form id="form" class="flex">
+              <fieldset>
+                <legend>Flight Information</legend>
+
+                <div class="inputs-wrapper flex column">
+                  <label for="flight-number">Flight Number:</label>
+                  <input id="flight-id" name="flight-number" type="number" readonly placeholder="AUTOMATIC_GENERATED" required />
+                </div>
+
+                <div class="inputs-wrapper flex column">
+                  <label for="destination">Destination:</label>
+                  <input id="destination" name="destination" type="text" required />
+                </div>
+
+                <div class="inputs-wrapper flex column">
+                  <label for="airline">Airline:</label>
+                  <input id="airline" name="airline" type="text" required />
+                </div>
+
+                <div class="inputs-wrapper flex column">
+                  <label for="price">Price:</label>
+                  <input id="price" name="price" type="number" required />
+                </div>
+              </fieldset>
+
+              <fieldset>
+                <legend>Additional Information</legend>
+
+                <div class="inputs-wrapper flex column">
+                  <label for="departure-date">Departure Date:</label>
+                  <input id="departure-date" name="departure-date" type="datetime" required />
+                </div>
+
+                <div class="inputs-wrapper flex column">
+                  <label for="arrival-date">Arrival Date:</label>
+                  <input id="arrival-date" name="arrival-date" type="datetime" required />
+                </div>
+
+                <div class="inputs-wrapper flex column">
+                  <label for="departure-airport">Departure Airport:</label>
+                  <input id="departure-airport" name="departure-airport" type="text" required />
+                </div>
+
+                <div class="inputs-wrapper flex column">
+                  <label for="arrival-airport">Arrival Airport:</label>
+                  <input id="arrival-airport" name="arrival-airport" type="text" required />
+                </div>
+              </fieldset>
+
+              <button id="add-flight-btn" class="add-flight-btn" type="submit">Add</button>
+            </form>
+          </div>
+
+          <div>
+            <h2 class="secondary-header">Status</h2>
+
+            <table class="flights-table">
+              <tr class="table-titles">
+                <th>Number</th>
+                <th>Destination</th>
+                <th>Airline</th>
+                <th>Departure Date</th>
+                <th>Arrival Date</th>
+                <th>Departure Airport</th>
+                <th>Arrival Airport</th>
+                <th>Price</th>
+                <th>Edit</th>
+                <th>Delete</th>
               </tr>
-            </tbody>
-          </table>
+
+              <tbody id="flights-infos-container">
+                <tr class="flights-info">
+                  <td class="flight-number">427893</td>
+                  <td>Middle East</td>
+                  <td>2024/2/12</td>
+                  <td>2024/2/12</td>
+                  <td>FAX</td>
+                  <td>JAV</td>
+                  <td>250</td>
+                  <td>Edit</td>
+                  <td>Delete</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="overlay"></div>
         </div>
 
         <div class="bookings hidden">
