@@ -37,87 +37,77 @@
         <button class="tab-button flex row" onclick="toggleTab(2)">Flight Status</button>
       </div>
 
-  <div class="tab" id="tab1">
-    
-    <div >
-      <form id="searchFlight-form" class="containerOptions flex j-s__between ">
-        <input class="details" type="text" name="departure_airport" id="departure-airport" placeholder="From">
-        <input class="details" type="text" name="arrival_airport" id="arrival-airport" placeholder="To">
-          <input class="details" type="datetime" name="departure_date" id="departure-date" placeholder="Departure Date">
-          <input class="details" type="datetime" name="arrival_date" id="arrival-date" placeholder="Arrival Date">
-          <button class="details btn" type="submit">Search Flights</button>
+      <div class="tab" id="tab1">
+        <div>
+          <form id="searchFlight-form" class="containerOptions flex j-s__between">
+            <input class="details" type="text" name="departure_airport" id="departure-airport" placeholder="From" />
+            <input class="details" type="text" name="arrival_airport" id="arrival-airport" placeholder="To" />
+            <input class="details" type="datetime" name="departure_date" id="departure-date" placeholder="Departure Date" />
+            <input class="details" type="datetime" name="arrival_date" id="arrival-date" placeholder="Arrival Date" />
+            <button class="details btn" type="submit">Search Flights</button>
+          </form>
+        </div>
+
+        <div id="search-result-container"></div>
+      </div>
+
+      <div class="tab" id="tab2">
+        <div id="discover-flights-container"></div>
+      </div>
+      <div class="tab" id="tab3">
+        <form action="get-status.php" class="flex j-s__between" method="post">
+          <input class="option" type="number" name="flight_id" id="flight_id" placeholder="Flight ID" />
+          <label for="airline">Select Airline:</label>
+          <select name="airline" class="option" id="airline"></select>
+          <input class="btn" type="submit" value="Submit" />
         </form>
       </div>
-      
-      <div id="search-result-container">
-      </div>
-
-  </div>
-
-  <div class="tab" id="tab2">
-    <div id="discover-flights-container">
-
     </div>
-  </div>
-  <div class="tab " id="tab3">
 
-    <form action="get-status.php" class="flex j-s__between" method="post">
-      <input class="option" type="number" name="flight_id" id="flight_id" placeholder="Flight ID">
-      <label for="airline">Select Airline:</label>
-      <select name="airline" class="option" id="airline"></select>
-      <input class="btn" type="submit" value="Submit">
-    </form>
-    
-  </div>
-  
-</div>
-
-<div>
+    <div>
       <div class="grid__container">
         <div class="grid__1 grid">
           <img
-            src="https://images.unsplash.com/photo-1569530593439-c5a3adda5204?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            src="https://plus.unsplash.com/premium_photo-1677343210638-5d3ce6ddbf85?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dHJhdmVsfGVufDB8fDB8fHww"
             class="grid__img"
           />
         </div>
-      
+
         <div class="grid__2 grid">
           <h3 class="grid__title">Hisma Desert – NEOM, Saudi Arabia</h3>
           <p>The NEOM Nature Reserve region is being designed to deliver protection and restoration of biodiversity across 95% of NEOM.</p>
           <a href="./pages/destination.html"> Learn more-></a>
         </div>
-      
+
         <div class="grid__3 grid">
           <img
-            src="https://images.unsplash.com/photo-1499678329028-101435549a4e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            src="https://images.unsplash.com/photo-1528543606781-2f6e6857f318?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fHRyYXZlbHxlbnwwfHwwfHx8MA%3D%3D"
             class="grid__img"
           />
         </div>
-      
+
         <div class="grid__4 grid">
           <h3 class="grid__title">Hot air balloons in Cappadocia Turkey</h3>
           <p>
-            Vast expanse of golden sands stretching endlessly under the brilliant desert sun, offering travelers a serene and timeless landscape to explore
-            and discover.
+            Vast expanse of golden sands stretching endlessly under the brilliant desert sun, offering travelers a serene and timeless landscape to explore and
+            discover.
           </p>
           <a href="./pages/destination.html"> Learn more-></a>
         </div>
-      
+
         <div class="grid__5 grid">
           <img
-            src="https://images.unsplash.com/photo-1682695795255-b236b1f1267d?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            src="https://images.unsplash.com/photo-1518684079-3c830dcef090?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTF8fHRyYXZlbHxlbnwwfHwwfHx8MA%3D%3D"
             class="grid__img"
           />
         </div>
-      
+
         <div class="grid__6 grid">
           <h3 class="grid__title">Vernazza sunset</h3>
           <p>Serene coastal village bathed in golden light as the sun sets over the horizon, creating unforgettable moments for travelers.</p>
           <a href="./pages/destination.html"> Learn more-></a>
         </div>
       </div>
-
-
     </div>
     <div class="bgimg-2"></div>
 

@@ -1,14 +1,7 @@
 <?php
 include("../../connection.php");
 
-if (isset($_GET['flight_id'])) {
-    $flightId = $_GET['flight_id'];
-    $query = $mysqli->prepare('SELECT * FROM flights WHERE flight_id = ?');
-    $query->bind_param('i', $flightId);
-} else {
-    $query = $mysqli->prepare('SELECT * FROM flights');
-}
-
+$query = $mysqli->prepare('SELECT * FROM  flights');
 $query->execute();
 $query->store_result();
 $num_rows = $query->num_rows();
@@ -30,7 +23,7 @@ if ($num_rows == 0) {
             'departure_airport' => $departure_airport,
             'arrival_airport' => $arrival_airport,
             'price' => $price,
-            'airline_id' => $airline,
+            'airline' => $airline,
         ];
 
         $flights[] = $flight;

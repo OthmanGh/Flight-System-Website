@@ -16,13 +16,13 @@ const flightComponent = ({
   departure_date,
   arrival_date,
   departure_airport,
-  airline_id,
+  airline,
   arrival_airport,
   price,
 }) => `<tr class="flights-info">
   <td class="flight-number">${flight_id}</td>
   <td>${destination}</td>
-  <td>${airline_id}</td>
+  <td>${airline}</td>
   <td>${departure_date}</td>
   <td>${arrival_date}</td>
   <td>${departure_airport}</td>
@@ -72,7 +72,7 @@ const createFlights = () => {
   const formatData = new FormData();
 
   formatData.append('destination', destination.value);
-  formatData.append('airline_id', airline.value);
+  formatData.append('airline', airline.value);
   formatData.append('price', price.value);
   formatData.append('departure_date', departureDate.value);
   formatData.append('departure_airport', departureAirport.value);
