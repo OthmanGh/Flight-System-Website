@@ -1,7 +1,14 @@
 <?php
 include("../../connection.php");
 
-$query = $mysqli->prepare('SELECT * FROM  flights');
+if (isset($_GET['flight_id'])) {
+    $flightId = $_GET['flight_id'];
+    $query = $mysqli->prepare('SELECT * FROM flights WHERE flight_id = ?');
+    $query->bind_param('i', $flightId);
+} else {
+    $query = $mysqli->prepare('SELECT * FROM flights');
+}
+
 $query->execute();
 $query->store_result();
 $num_rows = $query->num_rows();
