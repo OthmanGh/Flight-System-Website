@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/common/utilities.css">
+    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="../styles/pages/landing-page.css">
+    <title>Document</title>
+</head>
+<body>
+    <nav>
+        <input type="checkbox" id="check" />
+        <label for="check" class="checkbtn">
+            <i class="fas fa-bars"></i>
+        </label>
+        <label class="logo">SkyWings</label>
+  
+        <ul>  <!-- Home, profile, about us, flights-->
+            <li><a class="active" href="#">Home</a></li>
+            <li><a href="#">About us</a></li>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Profile</a></li>
+        </ul>
+    </nav>
+    <section>
+        <div>
+            <h1>We're happy that we have found flights that perfectly match your search criteria.</h1>
+            <h4>Your travel plans are just a step away from becoming a reality.</h4>
+            <h4>Proceed with confidence as you finalize your booking with us.</h4>
+        </div>
+        <div id="result_flights">
+            <!-- Matched flights will be displayed here -->
+        </div>
+    </section>
+
+    <script src="../scripts/app/book-flight.js"></script>
+</body>
+</html>
