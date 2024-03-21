@@ -39,6 +39,7 @@ const searchFlights = () => {
   formatData.append('arrival_airport', arrivalAirport.value);
   formatData.append('departure_date', departureDate.value);
   formatData.append('arrival_date', arrivalDate.value);
+  console.log(departureAirport.value);
 
   const options={
     method: "POST",
@@ -54,6 +55,8 @@ const searchFlights = () => {
     .then((data) => {
       console.log(data);
       displayFlights(data);
+      localStorage.setItem('matching_flights', JSON.stringify(data.flights))
+
     })
     .catch((error) => {
       console.error(error);
@@ -113,4 +116,3 @@ function toggleTab(tabIndex) {
 
 toggleTab(0);
 
-console.log(localStorage.getItem('id'));

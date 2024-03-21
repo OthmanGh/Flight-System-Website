@@ -8,28 +8,29 @@ if(isset($_POST['destination'], $_POST['departure_date'], $_POST['arrival_date']
     $arrival_date = $_POST['arrival_date'];
     $price = $_POST['price'];
 
+
 $query = $mysqli -> prepare('SELECT destination, departure_date, arrival_date, price FROM flights');
 $query -> execute();
 $query -> store_result();
 $num_rows = $query -> num_rows();
 
 if ($num_rows == 0){
-    $resoponse ['status'] = 'fail';
+    $response ['status'] = 'fail';
     $response ["message"] = "No flights available at the moment, make sure to check again later.";
 }else{
     $flights =[];
-    $query -> bind_result($destination, $departure_date, $arrival_date, $price);
+    $query -> bind_result($destination_result, $departure_date_result, $arrival_date_result, $price_result);
     while ($query -> fetch()){
         $flight = [
-            'destination' => $destination,
-            'departure_date' => $departure_date,
-            'arrival_date' => $arrival_date,
-            'price' => $price
+            'destination' => $destination_result,
+            'departure_date' => $departure_date_result,
+            'arrival_date' => $arrival_date_result,
+            'price' => $price_result
         ];
         $flights[] = $flight;
     }
     $response['status'] = "success";
-    $reponse['flights'] = $flights;
+    $response['flights'] = $flights;
     
     
 }    
